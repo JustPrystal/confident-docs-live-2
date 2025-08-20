@@ -9,6 +9,7 @@ export default function ArticleHeader({ content, updatedAt }) {
           <img
             src={content?.author?.fields?.profilePicture?.fields?.file?.url}
             alt="Author Pfp"
+            loading="lazy"
           />
         </div>
         <div className={styles.infoWrap}>
@@ -28,9 +29,6 @@ export default function ArticleHeader({ content, updatedAt }) {
           </span>
           <span className={styles.seperator}>.</span>
           <span className={styles.readTime}>{content?.readTime}</span>
-        </div>
-        <div className={styles.imageWrap}>
-
         </div>
       </div>
     </>

@@ -37,6 +37,7 @@ export default function Feature({ theme = 'deepEval' }) {
             width={150}
             height={150}
             alt="Confident Ai Logo"
+            loading="lazy"
           />
         </div>
         <div className={styles.textWrap}>
@@ -51,6 +52,7 @@ export default function Feature({ theme = 'deepEval' }) {
               height={80}
               alt="Confident Ai Logo"
               className={styles.logo}
+              loading="lazy"
             />
             <h2 className={styles[theme]}>
               {theme === "deepEval"
@@ -72,6 +74,7 @@ export default function Feature({ theme = 'deepEval' }) {
                     width={18}
                     height={18}
                     alt="checkmark"
+                    loading="lazy"
                   />
                 </span>
                 <span className={styles.text}>{feature}</span>

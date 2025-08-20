@@ -236,6 +236,7 @@ print(res)`,
                     muted
                     playsInline
                     preload="auto"
+                    loading="lazy"
                     style={{
                       display: tab === index ? "block" : "none",
                       width: "100%",

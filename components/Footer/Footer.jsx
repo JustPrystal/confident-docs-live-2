@@ -33,10 +33,15 @@ export default function Footer({ variant }) {
             <div className={styles.first}>
               <div className={styles.logo}>
                 <Image
-                  src={variant === 'light' ? "/icons/logo-without-border-black.svg" : "/icons/logo-without-border.svg"}
+                  src={
+                    variant === "light"
+                      ? "/icons/logo-without-border-black.svg"
+                      : "/icons/logo-without-border.svg"
+                  }
                   width={32}
                   height={32}
                   alt='alt="White bowtie with confident AI written on the right side"'
+                  loading="eager"
                 />
                 <span className={styles.span}>Confident AI</span>
               </div>
@@ -67,6 +72,7 @@ export default function Footer({ variant }) {
                 width={140}
                 height={140}
                 className={styles.complianceBadge}
+                loading="lazy"
               />
               <Image
                 src="/img/SOC2.png"
@@ -74,6 +80,7 @@ export default function Footer({ variant }) {
                 width={140}
                 height={140}
                 className={styles.complianceBadge}
+                loading="lazy"
               />
             </div>
           </div>

@@ -7,7 +7,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 const withNextra = nextra({
   defaultShowCopyCode: true,
-  staticImage: true
+  staticImage: true,
 })
 
 // For Nextra 4.x, theme configuration is handled separately
@@ -15,6 +15,7 @@ const withNextra = nextra({
 // You can include other Next.js configuration options here, in addition to Nextra settings:
 export default withNextra({
   reactStrictMode: true,
+  allowedDevOrigins: ["192.168.2.140"],
   webpack: (config) => {
     config.resolve.alias = {
       ...config.resolve.alias,

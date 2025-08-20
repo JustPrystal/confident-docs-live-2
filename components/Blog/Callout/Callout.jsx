@@ -15,7 +15,7 @@ export default function Callout({ theme = 'deepEval' }) {
           href="https://github.com/confident-ai/deepeval"
           className={styles.githubBtn}
         >
-          <Image src="/icons/star.svg" alt="star" width={26} height={26} />
+          <Image src="/icons/star.svg" alt="star" width={26} height={26}  loading="eager"/>
           Star on GitHub
         </a>
       </div>
