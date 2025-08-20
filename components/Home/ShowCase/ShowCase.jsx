@@ -54,7 +54,7 @@ function useTypingAnimation(html, inView, animated) {
       timeoutRef.current = setTimeout(() => {
         setTypedHtml(prev => prev + flatChars[charIndex]);
         setCharIndex(prev => prev + 1);
-      }, 0);
+      }, 6);
     }
     return () => clearTimeout(timeoutRef.current);
   }, [charIndex, flatChars]);
