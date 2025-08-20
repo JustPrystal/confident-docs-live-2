@@ -136,6 +136,12 @@ print(res)`,
     "https://confident-landing.s3.us-east-1.amazonaws.com/dataset-editor-4k.mp4",
     "https://confident-landing.s3.us-east-1.amazonaws.com/prompt-editor-4k.mp4",
   ];
+  const mobileVideos = [
+    "https://confident-landing.s3.us-east-1.amazonaws.com/evaluation.mp4",
+    "https://confident-landing.s3.us-east-1.amazonaws.com/monitoring.mp4",
+    "https://confident-landing.s3.us-east-1.amazonaws.com/dataset-editor.mp4",
+    "https://confident-landing.s3.us-east-1.amazonaws.com/prompt-editor.mp4",
+  ];
 
   const highlightedCode = useMemo(() => {
     if (!rawCode[tab]) return "";
@@ -160,6 +166,16 @@ print(res)`,
     [highlightedCode]
   );
   const typedLines = typedHtml.split("\n");
+
+  const [isMobile, setIsMobile] = useState(false); // Start with false instead of null
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setIsMobile(window.innerWidth <= 768);
+    }
+  }, []);
+
+  const videoArray = isMobile ? mobileVideos : videos;
 
   return (
     <div className={styles.showCaseSection} ref={ref} id="showcase">
@@ -211,24 +227,25 @@ print(res)`,
             </div>
 
             <div className={styles.video} suppressHydrationWarning>
-              {videos.map((videoSrc, index) => (
-                <video
-                  key={index}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  preload="auto"
-                  style={{
-                    display: tab === index ? "block" : "none",
-                    width: "100%",
-                    height: "100%",
-                  }}
-                >
-                  <source src={videoSrc} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              ))}
+              {videoArray.length > 0 &&
+                videoArray.map((videoSrc, index) => (
+                  <video
+                    key={index}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="auto"
+                    style={{
+                      display: tab === index ? "block" : "none",
+                      width: "100%",
+                      height: "100%",
+                    }}
+                  >
+                    <source src={videoSrc} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                ))}
             </div>
           </div>
         </div>

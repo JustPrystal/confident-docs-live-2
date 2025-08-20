@@ -1,3 +1,30 @@
 #html {
   background-color: #0e0e13;
+  scroll-behavior: smooth;
+  scroll-padding-top: 24px;
+}
+
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 12px; /* scrollbar width */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* track color */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; /* thumb color */
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* hover color */
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;        /* "auto" | "thin" */
+  scrollbar-color: #888 #f1f1f1; /* thumb | track */
 }

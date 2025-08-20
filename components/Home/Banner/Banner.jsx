@@ -86,7 +86,7 @@ export default function Banner() {
       <div
         className={styles.absoluteBackground}
         style={{
-          backgroundImage: `radial-gradient(circle closest-side at 50% 42%, #0a0b14d1 90%, #0e0e13), url("/img/grid-bg.svg")`,
+          backgroundImage: `radial-gradient(circle closest-side at 50% 42%, #0b101b00 90%, #0e0e13), url("/img/grid-bg.svg")`,
         }}
       ></div>
       <Marquee />
