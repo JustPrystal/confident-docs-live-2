@@ -168,7 +168,7 @@ print(res)`,
   );
   const typedLines = typedHtml.split("\n");
 
-  const [isMobile, setIsMobile] = useState(true); // Start with false instead of null
+  // const [isMobile, setIsMobile] = useState(true); // Start with false instead of null
 
   // useEffect(() => {
   //   if (typeof window !== "undefined") {
@@ -176,11 +176,12 @@ print(res)`,
   //   }
   // }, []);
 
-  const videoArray = isMobile ? mobileVideos : videos;
+  const videoArray = mobileVideos;
 
   // when section is in view, play the video
   useEffect(() => {
     if (inView) {
+      console.log('in-view fired');
       videoRefs.current[tab].play();
     }
   }, [inView, tab]);
@@ -244,7 +245,8 @@ print(res)`,
                     allowFullScreen={false}
                     // autoPlay={tab === index ? true : false}
                     loop
-                    muted                   
+                    muted 
+                    playsInline                  
                     preload={index === 0 ? "auto" : "none"}
                     style={{
                       display: tab === index ? "block" : "none",
