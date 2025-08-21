@@ -66,6 +66,7 @@ export default function ShowCase() {
   const [tab, setTab] = useState(0);
   const [hasAnimatedTab, setHasAnimatedTab] = useState({});
   const { ref, inView } = useInView({ triggerOnce: false });
+  const videoRefs = useRef([]);
 
   // Data for the showcase
   const tabLabels = [
@@ -177,6 +178,12 @@ print(res)`,
 
   const videoArray = isMobile ? mobileVideos : videos;
 
+  // when section is in view, play the video
+  useEffect(() => {
+    if (inView) {
+      videoRefs.current[tab].play();
+    }
+  }, [inView, tab]);
   return (
     <div className={styles.showCaseSection} ref={ref} id="showcase">
       <div className={styles.inner}>
@@ -230,11 +237,14 @@ print(res)`,
               {videoArray.length > 0 &&
                 videoArray.map((videoSrc, index) => (
                   <video
+                    ref={el => (videoRefs.current[index] = el)}
                     key={index}
-                    autoPlay={tab === index ? true : false}
+                    autoPlay={false}
+                    // autoPlay={tab === index ? true : false}
                     loop
                     muted
-                    playsInline
+                    preload="none"
+                    // playsInline
                     // preload="none"
                     // preload={index === 0 ? "auto" : "none"}
                     loading="lazy"
