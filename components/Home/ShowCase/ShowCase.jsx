@@ -231,11 +231,12 @@ print(res)`,
                 videoArray.map((videoSrc, index) => (
                   <video
                     key={index}
-                    autoPlay
+                    autoPlay={tab === index ? true : false}
                     loop
                     muted
                     playsInline
-                    preload="auto"
+                    // preload="none"
+                    // preload={index === 0 ? "auto" : "none"}
                     loading="lazy"
                     style={{
                       display: tab === index ? "block" : "none",
