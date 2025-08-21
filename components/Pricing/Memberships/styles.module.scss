@@ -12,9 +12,6 @@
     padding: 55px 0 100px;
     margin-bottom: 0;
   }
-  @include responsive(sm) {
-    padding: 0px 0 100px;
-  }
   .inner {
     display: flex;
     flex-direction: column;

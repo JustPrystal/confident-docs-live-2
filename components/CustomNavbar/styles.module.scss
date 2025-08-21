@@ -239,21 +239,23 @@
           margin: 6px 0;
           transition: 0.4s;
         }
+
+        &.active {
+          .bar1 {
+            transform: rotate(-45deg) translate(-5px, 6px);
+          }
+  
+          .bar2 {
+            opacity: 0;
+          }
+  
+          .bar3 {
+            transform: rotate(45deg) translate(-5px, -6px);
+          }
+        }
       }
 
-      &.active {
-        .bar1 {
-          transform: rotate(-45deg) translate(-5px, 6px);
-        }
-
-        .bar2 {
-          opacity: 0;
-        }
-
-        .bar3 {
-          transform: rotate(45deg) translate(-5px, -6px);
-        }
-      }
+      
     }
   }
 }
