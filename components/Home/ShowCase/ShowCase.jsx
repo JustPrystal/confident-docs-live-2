@@ -240,14 +240,12 @@ print(res)`,
                     ref={el => (videoRefs.current[index] = el)}
                     key={index}
                     autoPlay={false}
+                    controls={false}
+                    allowFullScreen={false}
                     // autoPlay={tab === index ? true : false}
                     loop
-                    muted
-                    preload="none"
-                    // playsInline
-                    // preload="none"
-                    // preload={index === 0 ? "auto" : "none"}
-                    loading="lazy"
+                    muted                   
+                    preload={index === 0 ? "auto" : "none"}
                     style={{
                       display: tab === index ? "block" : "none",
                       width: "100%",

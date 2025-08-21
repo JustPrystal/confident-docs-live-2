@@ -13,5 +13,5 @@ const formatStars = (n) => {
   ? `${Math.floor(n / 1000000)}M+`
   : n >= 1000
   ? `${Math.floor(n / 1000)}k+`
-    : n.toString();
+    : n?.toString();
 }
