@@ -167,13 +167,13 @@ print(res)`,
   );
   const typedLines = typedHtml.split("\n");
 
-  const [isMobile, setIsMobile] = useState(false); // Start with false instead of null
+  const [isMobile, setIsMobile] = useState(true); // Start with false instead of null
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      setIsMobile(window.innerWidth <= 768);
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (typeof window !== "undefined") {
+  //     setIsMobile(window.innerWidth <= 768);
+  //   }
+  // }, []);
 
   const videoArray = isMobile ? mobileVideos : videos;
 
