@@ -19,6 +19,13 @@ export default function GlobalLayout({ children, variant = 'dark', isDocsPage = 
     }
   }, []);
 
+  useEffect(() => {
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+      window.scrollTo(0, 0);
+    }
+  }, []);
+
   return (
     <>
       <div

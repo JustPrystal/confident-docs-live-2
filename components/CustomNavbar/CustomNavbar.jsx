@@ -77,7 +77,7 @@ const CustomNavbar = ({ isDocsPage, staticHeader = false }) => {
               alt="White bowtie with confident AI written on the right side"
               width={32}
               height={32}
-              priority
+              loading="eager"
             />
             <span className={styles.span}>Confident AI</span>
           </Link>
@@ -105,6 +105,7 @@ const CustomNavbar = ({ isDocsPage, staticHeader = false }) => {
                         width={10}
                         height={10}
                         alt="downwards facing arrow"
+                        loading="lazy"
                       />
                     </div>
                     <div

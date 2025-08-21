@@ -34,7 +34,7 @@ export default function DemoForm() {
       "yandex.com",
     ];
 
-    const isPersonalEmail = personalEmailDomains.some(domain => 
+    const isPersonalEmail = personalEmailDomains.some(domain =>
       email.toLowerCase().includes(domain)
     );
 
@@ -289,7 +289,13 @@ export default function DemoForm() {
       {showCalendly && calendlyUrl && (
         <div className={styles.calendlyPopup}>
           <div className={styles.closeBtn} onClick={closeCalendly}>
-            <Image src="/icons/close.svg" alt="close" width={24} height={24} />
+            <Image
+              src="/icons/close.svg"
+              alt="close"
+              width={24}
+              height={24}
+              loading="lazy"
+            />
           </div>
           <div className={styles.popUpInner}>
             <div

@@ -8,6 +8,7 @@ export default function BackedBy() {
       src="/icons/brand-icons/ycombinator.svg"
       width={28}
       height={28}
+      loading="lazy"
     />
     <div className={styles.BackedByText}>
       <span>Backed by</span>Y Combinator

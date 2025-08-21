@@ -119,6 +119,7 @@ export default function OpenPositions() {
                     width={18}
                     height={18}
                     alt="icon showing a gps marker"
+                    loading="lazy"
                   />
                   <span className={styles.text}>{job.location}</span>
                 </div>
@@ -129,6 +130,7 @@ export default function OpenPositions() {
                     width={18}
                     height={18}
                     alt="icon showing a bag of money"
+                    loading="lazy"
                   />
                   <span className={styles.text}>{job.salary}</span>
                 </div>
@@ -139,7 +141,8 @@ export default function OpenPositions() {
                     width={18}
                     height={18}
                     alt="appartments icon"
-                  />
+                    loading="lazy"
+                    />
                   <span className={styles.text}>{job.tags}</span>
                 </div>
               </div>

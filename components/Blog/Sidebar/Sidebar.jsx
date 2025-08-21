@@ -190,6 +190,7 @@ export default function SideBar({
             width={12}
             height={12}
             alt="down-wards facing arrow"
+            loading="lazy"
           />
         </span>
         <ul

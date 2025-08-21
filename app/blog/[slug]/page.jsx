@@ -7,12 +7,18 @@ import SideBar from "@/components/Blog/Sidebar/Sidebar";
 import Blogs from "@/components/Blog/Blogs";
 import styles from "./styles.module.scss";
 
+async function getBlogData(slug) {
+  const blog = await getBlog(slug);
+  return blog;
+}
+
 export default async function Page({ params }) {
   const { slug } = await params;
-  const blog = await getBlog(slug);
+  const blog = await getBlogData(slug);
   const theme = blog?.fields?.theme[0] || "deepEval";
   return (
     <GlobalLayout staticHeader={true}>
+      <link rel="preload" href={blog?.fields?.featuredImage?.fields?.file?.url} as="image" />
       <div
         className={styles.Article}
         style={{ backgroundColor: !blog || !blog.fields ? "#0e0e13" : "" }}
@@ -45,6 +51,7 @@ export default async function Page({ params }) {
                   <img
                     className={styles.featuredImage}
                     src={blog?.fields?.featuredImage?.fields?.file?.url}
+                    loading="eager"
                     alt="featured Image"
                   />
                   <SideBar content={blog?.fields} theme={theme} />
@@ -85,7 +92,7 @@ export default async function Page({ params }) {
 }
 export async function generateMetadata({ params }) {
   const { slug } = await params;
-  const blog = await getBlog(slug);
+  const blog = await getBlogData(slug);
   const imageUrl = blog?.fields?.featuredImage?.fields?.file?.url;
 
   const fullImageUrl = imageUrl?.startsWith("http")

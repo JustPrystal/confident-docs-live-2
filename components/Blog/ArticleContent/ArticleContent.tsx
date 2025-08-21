@@ -170,7 +170,12 @@ export default function ArticleContent({
 
         return (
           <figure>
-            <img src={src} alt={alt} style={{ maxWidth: "100%" }} />
+            <img
+              src={src}
+              alt={alt}
+              loading="lazy"
+              style={{ maxWidth: "100%" }}
+            />
             {description && (
               <figcaption>{parseDescriptionToNodes(description)}</figcaption>
             )}

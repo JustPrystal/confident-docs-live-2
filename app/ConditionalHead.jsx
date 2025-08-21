@@ -3,9 +3,12 @@
 import { Head } from "nextra/components";
 import { usePathname } from "next/navigation";
 import Script from "next/script";
+import { useEffect } from "react";
 
 export default function ConditionalHead() {
   const pathname = usePathname();
+
+
 
   // Check if we're on a docs page (path starts with /docs)
   const isDocsPage =
