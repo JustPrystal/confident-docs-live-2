@@ -39,7 +39,7 @@ export default function HomePage() {
         {twoColumns.map((item, index) => (
           <TwoColumn key={index} data={item} />
         ))}
-        <ShowCase />
+        {/* <ShowCase /> */}
         <CardSection />
         <SecurityInsurance />
         <SocialsSection />
