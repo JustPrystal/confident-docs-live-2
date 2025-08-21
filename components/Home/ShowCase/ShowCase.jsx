@@ -181,7 +181,6 @@ print(res)`,
   // when section is in view, play the video
   useEffect(() => {
     if (inView) {
-      console.log('in-view fired');
       videoRefs.current[tab].play();
     }
   }, [inView, tab]);
